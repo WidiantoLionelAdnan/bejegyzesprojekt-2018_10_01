@@ -19,9 +19,36 @@ namespace BejegyzesProjekt
             this.szerzo = szerzo;
             this.tartalom = tartalom;
             this.likeok = 0;
-            this.letrejott = ;
+            this.letrejott = new DateTime(2018, 10, 01);
+        }
+
+        public String Szerzo
+        {
+            get { return szerzo; }
+        }
+        public String Tartalom
+        {
+            get { return tartalom; }
+            //set { tartalom = new DateTime}
+        }
+        public int Likeok
+        {
+            get { return likeok; }
+        }
+        public DateTime Szerkesztve
+        {
+            get { return szerkesztve; }
+        }
+        public void Like()
+        {
+            likeok += 1;
+        }
+
+        public void Kiir()
+        {
+            Console.WriteLine("Szerző " + szerzo + "-" + "Likeok" + likeok + "-" + "Létrejött" + letrejott);
+            Console.WriteLine("Szerkesztve: " + szerkesztve);
+            Console.WriteLine(tartalom);
         }
     }
-
-
 }
