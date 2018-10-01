@@ -19,7 +19,8 @@ namespace BejegyzesProjekt
             this.szerzo = szerzo;
             this.tartalom = tartalom;
             this.likeok = 0;
-            this.letrejott = new DateTime(2018, 10, 01);
+            this.letrejott = DateTime.Now;
+            this.szerkesztve = letrejott;
         }
 
         public String Szerzo
@@ -29,7 +30,9 @@ namespace BejegyzesProjekt
         public String Tartalom
         {
             get { return tartalom; }
-            //set { tartalom = new DateTime}
+            set { tartalom = value;
+                  szerkesztve = DateTime.Now;
+                 }
         }
         public int Likeok
         {
@@ -39,6 +42,11 @@ namespace BejegyzesProjekt
         {
             get { return szerkesztve; }
         }
+        public DateTime Letrejott
+        {
+            get { return letrejott; }
+        }
+      
         public void Like()
         {
             likeok += 1;
@@ -46,7 +54,7 @@ namespace BejegyzesProjekt
 
         public void Kiir()
         {
-            Console.WriteLine("Szerző " + szerzo + "-" + "Likeok" + likeok + "-" + "Létrejött" + letrejott);
+            Console.WriteLine("Szerző " + szerzo + "-" + "Likeok " + likeok + "-" + "Létrejött " + letrejott);
             Console.WriteLine("Szerkesztve: " + szerkesztve);
             Console.WriteLine(tartalom);
         }
